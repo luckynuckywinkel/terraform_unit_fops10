@@ -14,11 +14,11 @@ data "yandex_compute_image" "ubuntu" {
 }
 resource "yandex_compute_instance" "platform" {
   name        = local.vm_web_name
-  platform_id = "standard-v3"
+  platform_id = var.vm_web_platform_id
   resources {
-    cores         = 2
-    memory        = 1
-    core_fraction = 20
+    cores         = var.vm_web_cores
+    memory        = var.vm_web_memory
+    core_fraction = var.vm_web_core_fraction
   }
   boot_disk {
     initialize_params {
@@ -45,11 +45,12 @@ data "yandex_compute_image" "ubuntu2" {
 
 resource "yandex_compute_instance" "database" {
   name        = local.vm_db_name
-  platform_id = "standard-v3"
+  platform_id = var.vm_db_platform_id
+  allow_stopping_for_update = true
   resources {
-    cores         = 2
-    memory        = 2
-    core_fraction = 20
+    cores         = var.vm_db_cores
+    memory        = var.vm_db_memory
+    core_fraction = var.vm_db_core_fraction
   }
   boot_disk {
     initialize_params {
