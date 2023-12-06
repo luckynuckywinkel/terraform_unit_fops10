@@ -13,7 +13,7 @@ data "yandex_compute_image" "ubuntu" {
   family = var.vm_web_image_family
 }
 resource "yandex_compute_instance" "platform" {
-  name        = var.vm_web_instance_name
+  name        = local.vm_web_name
   platform_id = "standard-v3"
   resources {
     cores         = 2
@@ -44,7 +44,7 @@ data "yandex_compute_image" "ubuntu2" {
  }
 
 resource "yandex_compute_instance" "database" {
-  name        = var.vm_db_instance_name
+  name        = local.vm_db_name
   platform_id = "standard-v3"
   resources {
     cores         = 2
