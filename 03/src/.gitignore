@@ -7,4 +7,4 @@
 *.tfstate.*
 
 # own secret vars store.
-*.tfvars
+personal.auto.tfvars
