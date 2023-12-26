@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "web" {
   metadata = {
     serial-port-enable = var.vms_ssh["port_enable"]
     ssh-keys           = "ubuntu:${var.vms_ssh["ssh_key"]}"
-    security-group-id  = var.security_group_id   
+    security-group-id  = "enpv1pre7gv26up4rrtm"   
   }
 
   depends_on = [

@@ -15,7 +15,7 @@ variable "each_vm" {
     replica = {
       cpu           = 2
       ram           = 4
-      core_fraction = 50
+      core_fraction = 20
       disk          = 50
     },
   }
