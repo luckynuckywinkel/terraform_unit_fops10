@@ -12,6 +12,12 @@ resource "yandex_compute_instance" "web" {
     memory        = var.vms_web_resources["memory"]
     core_fraction = var.vms_web_resources["core_fraction"]
   }
+  
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.image_id
+    }
+  }
 
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
