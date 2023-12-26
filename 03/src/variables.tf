@@ -36,3 +36,15 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "vm_web_platform_id" {
+  type        = string
+  description = "platform ID for web"
+  default     = "standard-v3"
+}
+
+variable "vm_web_image_family" {
+   type        = string
+   description = "YC image of VM system"
+   default     = "ubuntu-2004-lts"
+}
