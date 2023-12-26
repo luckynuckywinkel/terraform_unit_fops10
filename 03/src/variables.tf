@@ -14,6 +14,12 @@ variable "folder_id" {
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
+ variable "security_group_id" {
+   type        = string
+   description = "yc vpc security-group list"
+ }
+
+
 variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
