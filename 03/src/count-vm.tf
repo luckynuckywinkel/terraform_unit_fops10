@@ -22,12 +22,15 @@ resource "yandex_compute_instance" "web" {
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
     nat = true
+    security_group_ids = [yandex_vpc_security_group.example.id]
   }
+  
+  #security_group_ids = [yandex_vpc_security_group.example.id]
 
   metadata = {
     serial-port-enable = var.vms_ssh["port_enable"]
     ssh-keys           = "ubuntu:${var.vms_ssh["ssh_key"]}"
-    security-group-id  = "enpv1pre7gv26up4rrtm"   
+   # security-group-id  = "enpv1pre7gv26up4rrtm"   
   }
 
   depends_on = [
