@@ -1,0 +1,10 @@
+[webservers]
+web-1 ansible_host = "51.250.75.162" fqdn = "web-1.ru-central1-a.internal"
+web-2 ansible_host = "62.84.112.100" fqdn = "web-2.ru-central1-a.internal"
+
+[databases]
+main ansible_host = "51.250.68.194" fqdn = "main.ru-central1-a.internal"
+replica ansible_host = "84.201.131.72" fqdn = "replica.ru-central1-a.internal"
+
+[storage]
+storage ansible_host = "130.193.51.233" fqdn = "storage.ru-central1-a.internal"
