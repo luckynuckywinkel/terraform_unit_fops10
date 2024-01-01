@@ -48,3 +48,10 @@ variable "vm_web_image_family" {
    description = "YC image of VM system"
    default     = "ubuntu-2004-lts"
 }
+
+variable "vm_storage_platform_id" {
+  type        = string
+  description = "platform ID for storage"
+  default     = "standard-v2"
+}
+

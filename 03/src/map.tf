@@ -7,6 +7,16 @@ variable "vms_web_resources" {
   }
 }
 
+variable "vms_storage_resources" {
+  type = map(string)
+  default = {
+    cores          = 2
+    memory         = 2
+    core_fraction  = 50
+  }
+}
+
+
 variable "vms_ssh" {
   type = map(any)
   default = {
