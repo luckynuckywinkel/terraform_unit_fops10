@@ -36,5 +36,6 @@ resource "yandex_compute_instance" "web" {
   depends_on = [
     yandex_compute_instance.db
   ]
+
 }
 
